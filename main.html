@@ -9,22 +9,28 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
+					arr = arr.map(Number);
+			let unique = [...new Set(arr)];
+			if (unique.length < 2) {
+				return -Infinity;
+			}
+			unique.sort((a, b) => b - a);
+			return unique[1];
 			
-		}
+		} 
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
-			}
+			}  
 			alert(secondHighest(arr));
-		}
+		}  
 		Main();
 	</script>
 
-    <script type="text/javascript" src="./script.js">
+    <script type= "text/javascript" src="./script.js">
 </script>
 
 </body>
